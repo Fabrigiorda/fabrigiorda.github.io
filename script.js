@@ -1,4 +1,5 @@
 const ventanasAbiertas = {};
+const infosAbiertas = {};
 
 document.querySelectorAll('.icono').forEach((btn, index) => {
   btn.addEventListener('click', () => {
@@ -23,7 +24,9 @@ function cerrarVentana(id) {
     ventana.style.display = 'none';
     ventana.classList.remove('cerrando');
     ventanasAbiertas[id] = false;
+    infosAbiertas = false;
   }, 300);
+
 }
 
 const pista = document.querySelector('.carrusel-pista');
@@ -40,7 +43,6 @@ if (pista && flechaIzq && flechaDer) {
     let indiceActual = 0;
 
     function actualizarCarrusel() {
-        // Limita el índice para que nunca deje un espacio vacío a la derecha
         if (indiceActual > totalCuadrados - cuadradosPorVista) {
             indiceActual = 0;
         }
@@ -85,27 +87,45 @@ if (pista && flechaIzq && flechaDer) {
     });
 }
 
-// Agregar contenido a los cuadrados (ejemplo)
-function agregarContenidoProyectos() {
-    const cuadrados = document.querySelectorAll('.cuadrados');
-    const proyectos = [
-        { titulo: "Proyecto 1", descripcion: "Descripción del proyecto 1" },
-        { titulo: "Proyecto 2", descripcion: "Descripción del proyecto 2" },
-        { titulo: "Proyecto 3", descripcion: "Descripción del proyecto 3" },
-        { titulo: "Proyecto 4", descripcion: "Descripción del proyecto 4" },
-        { titulo: "Proyecto 5", descripcion: "Descripción del proyecto 5" },
-        { titulo: "Proyecto 6", descripcion: "Descripción del proyecto 6" }
-    ];
 
-    cuadrados.forEach((cuadrado, index) => {
-        if (index < proyectos.length) {
-            const proyecto = proyectos[index];
-            cuadrado.innerHTML = `
-                <div>
-                    <div class="proyecto-titulo">${proyecto.titulo}</div>
-                    <div class="proyecto-descripcion">${proyecto.descripcion}</div>
-                </div>
-            `;
-        }
-    });
+
+
+
+document.querySelectorAll('.boton-repo.info').forEach((btn, index) => {
+  btn.addEventListener('click', (e) => {
+    e.stopPropagation(); 
+    const IdInfo = ['ventanaInfo-portfolio', 'ventanaInfo-calculadora', 'ventanaInfo-preguntados', 'ventanaInfo-space', 'ventanaInfo-photoshop'][index];
+    if (!infosAbiertas[IdInfo]) {
+      const ventana_info = document.getElementById(IdInfo);
+      ventana_info.style.display = 'block';
+      ventana_info.classList.remove('abriendo');
+      void ventana_info.offsetWidth; 
+      ventana_info.classList.add('abriendo');
+      infosAbiertas[IdInfo] = true;
+    }
+  });
+});
+
+function cerrarVentanaInfo(id) {
+  const ventana_info = document.getElementById(id);
+  ventana_info.classList.remove('abriendo');
+  setTimeout(() => {
+    ventana_info.style.display = 'none';
+    infosAbiertas[id] = false;
+  }, 300);
 }
+
+
+document.addEventListener('click', (e) => {
+  const ventanasInfo = document.querySelectorAll('[id^="ventanaInfo-"]');
+  ventanasInfo.forEach(ventana => {
+    if (ventana.style.display === 'block') {
+      if (!ventana.contains(e.target) && !e.target.classList.contains('info')) {
+        e.stopPropagation();
+        cerrarVentanaInfo(ventana.id);
+      }
+    }
+  });
+});
+
+

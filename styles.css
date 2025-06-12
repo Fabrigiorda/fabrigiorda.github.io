@@ -258,7 +258,7 @@ body:has(#cambio-tema:checked) {
   margin-left: 10px;
 }
 
-.boton_x {
+.boton_x, .boton_x2 {
   background-color: crimson;
   color: white;
   width: 30px;
@@ -270,7 +270,7 @@ body:has(#cambio-tema:checked) {
   font-weight: bold;
 }
 
-.boton_x:hover {
+.boton_x:hover, .boton_x2:hover {
   background-color:rgb(179, 15, 48);
 }
 
@@ -803,4 +803,46 @@ body:has(#cambio-tema:not(:checked)) .cuadro-habilidad:hover {
 .cuadrados:hover .boton-repo {
   opacity: 100%;
   transition: all 0.3s ease-in-out;
+}
+
+
+.ventanaInfo {
+  height: 200px;
+  width: 400px;
+  background: var(--fondo-sobremi);
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0.5);
+  border-radius: 10px;
+  display: none;
+  overflow: hidden;
+  z-index: 2000;
+  opacity: 0;
+  transition: all 0.3s ease-in-out;
+  padding: 20px;
+  color: var(--color-letra);
+  font-family: "Josefin Sans";
+  box-shadow: 15px;
+}
+
+.ventanaInfo.abriendo {
+  transform: translate(-50%, -50%) scale(1);
+  opacity: 1;
+}
+
+.boton_x2 {
+  position: absolute;
+  right: 15px;
+}
+
+.ventanaInfo h2 {
+  margin-top: 15px;
+  margin-left: 12px;
+}
+
+.ventanaInfo p {
+  margin-top: 35px;
+  margin-left: 12px;
+  font-size: 12;
 }
