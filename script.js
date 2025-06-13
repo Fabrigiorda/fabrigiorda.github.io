@@ -3,7 +3,7 @@ const infosAbiertas = {};
 
 document.querySelectorAll('.icono').forEach((btn, index) => {
   btn.addEventListener('click', () => {
-    const idVentana = ['ventana-sobremi', 'ventana-proyectos', 'ventana-habilidades', 'ventana-experiencia'][index];
+    const idVentana = ['ventana-sobremi', 'ventana-proyectos', 'ventana-habilidades', 'ventana-contacto'][index];
     if (!ventanasAbiertas[idVentana]) {
       const ventana = document.getElementById(idVentana);
       ventana.style.display = 'flex';
@@ -23,8 +23,7 @@ function cerrarVentana(id) {
   setTimeout(() => {
     ventana.style.display = 'none';
     ventana.classList.remove('cerrando');
-    ventanasAbiertas[id] = false;
-    infosAbiertas = false;
+    delete ventanasAbiertas[id];
   }, 300);
 
 }
@@ -36,25 +35,45 @@ const flechaDer = document.querySelector('.flecha-der');
 if (pista && flechaIzq && flechaDer) {
     const cuadrados = pista.querySelectorAll('.cuadrados');
     const totalCuadrados = cuadrados.length;
-    const anchoCuadrado = 260;
+    let anchoCuadrado = 260; 
     const gap = 30;
-    const cuadradosPorVista = 3;
+    let cuadradosPorVista = 3;
 
     let indiceActual = 0;
 
+    function actualizarDimensiones() {
+      if (window.innerWidth <= 768 && window.innerWidth > 480) {
+        cuadradosPorVista = 2;
+        anchoCuadrado = 220;
+      } else if (window.innerWidth <= 480) {
+        cuadradosPorVista = 1;
+        anchoCuadrado = 200;
+      } else {
+        cuadradosPorVista = 3;
+        anchoCuadrado = 260;
+      }
+    }
+
+
     function actualizarCarrusel() {
-        if (indiceActual > totalCuadrados - cuadradosPorVista) {
-            indiceActual = 0;
+        // Solo aplica la lógica de transform si la pantalla es mayor a 768px
+        if (window.innerWidth > 768) {
+            if (indiceActual > totalCuadrados - cuadradosPorVista) {
+                indiceActual = 0;
+            }
+            if (indiceActual < 0) {
+                indiceActual = totalCuadrados - cuadradosPorVista;
+            }
+            const desplazamiento = -(indiceActual * (anchoCuadrado + gap));
+            pista.style.transform = `translateX(${desplazamiento}px)`;
+        } else {
+            // En móvil, resetea la transformación para permitir el scroll nativo.
+            pista.style.transform = 'none';
         }
-        if (indiceActual < 0) {
-            indiceActual = totalCuadrados - cuadradosPorVista;
-        }
-        const desplazamiento = -(indiceActual * (anchoCuadrado + gap));
-        pista.style.transform = `translateX(${desplazamiento}px)`;
     }
 
     function moverDerecha() {
-        indiceActual += cuadradosPorVista;
+        indiceActual++;
         if (indiceActual > totalCuadrados - cuadradosPorVista) {
             indiceActual = 0;
         }
@@ -62,7 +81,7 @@ if (pista && flechaIzq && flechaDer) {
     }
 
     function moverIzquierda() {
-        indiceActual -= cuadradosPorVista;
+        indiceActual--;
         if (indiceActual < 0) {
             indiceActual = totalCuadrados - cuadradosPorVista;
         }
@@ -72,10 +91,14 @@ if (pista && flechaIzq && flechaDer) {
     flechaDer.addEventListener('click', moverDerecha);
     flechaIzq.addEventListener('click', moverIzquierda);
 
-    actualizarCarrusel();
+    window.addEventListener('resize', () => {
+      actualizarDimensiones();
+      actualizarCarrusel();
+    });
 
     document.addEventListener('keydown', (e) => {
-        if (document.getElementById('ventana-proyectos').style.display === 'flex') {
+        const proyectosVentana = document.getElementById('ventana-proyectos');
+        if (proyectosVentana && proyectosVentana.style.display === 'flex') {
             if (e.key === 'ArrowRight') {
                 e.preventDefault();
                 moverDerecha();
@@ -85,6 +108,9 @@ if (pista && flechaIzq && flechaDer) {
             }
         }
     });
+
+    actualizarDimensiones();
+    actualizarCarrusel();
 }
 
 
@@ -111,7 +137,7 @@ function cerrarVentanaInfo(id) {
   ventana_info.classList.remove('abriendo');
   setTimeout(() => {
     ventana_info.style.display = 'none';
-    infosAbiertas[id] = false;
+    delete infosAbiertas[id];
   }, 300);
 }
 
@@ -120,12 +146,10 @@ document.addEventListener('click', (e) => {
   const ventanasInfo = document.querySelectorAll('[id^="ventanaInfo-"]');
   ventanasInfo.forEach(ventana => {
     if (ventana.style.display === 'block') {
-      if (!ventana.contains(e.target) && !e.target.classList.contains('info')) {
+      if (!ventana.contains(e.target) && !e.target.closest('.boton-repo.info')) {
         e.stopPropagation();
         cerrarVentanaInfo(ventana.id);
       }
     }
   });
 });
-
-

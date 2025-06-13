@@ -2,6 +2,7 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Portfolio</title>
   <link rel="stylesheet" href="styles.css">
 <style>
@@ -31,8 +32,8 @@
         <span>Habilidades</span>
       </button>
       <button class="icono" >
-        <img src="imagenes/experiencia.png" >
-        <span>Experiencia</span>
+        <img src="imagenes/contacto.png" >
+        <span>Contacto</span>
       </button>
     </div>
     <div class="boton_tema">
@@ -48,9 +49,12 @@
     </div>
 
     
-
   
   </div>
+
+
+
+
 
 
 
@@ -76,13 +80,18 @@
       Tengo conocimientos en <span class="highlight">HTML, CSS, Python</span> y sigo aprendiendo cada día para convertirme en desarrollador.
       Me gusta construir cosas útiles, experimentar con ideas nuevas y colaborar en proyectos que sumen.
     </p>
+    <a href="miCV.pdf" target="_blank" class="descarga-cv">Descarga mi CV</a>
     <div class="redes">
+      
+
       <a href="https://github.com/" target="_blank">
         <img src="https://cdn-icons-png.flaticon.com/512/25/25231.png" alt="GitHub" />
       </a>
+
       <a href="https://instagram.com" target="_blank">
         <img src="https://cdn-icons-png.flaticon.com/512/1384/1384063.png" alt="Instagram" />
       </a>
+      
     </div>
   </div>
 
@@ -235,11 +244,27 @@
 
 
 
-<div class="ventana" id="ventana-experiencia">
+<div class="ventana" id="ventana-contacto">
   <div class="barra-arriba">
-    <div class="icono2"><img src="imagenes/experiencia.png"></div>
-    <h2 class="texto-experiencia">Experiencia</h2>
-    <div class="boton_x" onclick="cerrarVentana('ventana-experiencia')">X</div>
+    <div class="icono2"><img src="imagenes/contacto.png"></div>
+    <h2 class="texto-contacto">Contacto</h2>
+    <div class="boton_x" onclick="cerrarVentana('ventana-contacto')">X</div>
+  </div>
+
+  <div class="circulo-decorativo circulo1"></div>
+  <div class="circulo-decorativo circulo2"></div>
+
+  <div class="contenido-sobremi">
+    <h2>Contáctame</h2>
+    
+    
+
+    <form id="formulario-contacto" class="formulario-contacto">
+      <input type="text" id="nombre" name="nombre" placeholder="Nombre" required>
+      <input type="email" id="email" name="email" placeholder="Correo electrónico" required>
+      <textarea id="mensaje" name="mensaje" rows="5" placeholder="Mensaje" required></textarea>
+      <button type="submit">Enviar</button>
+    </form>
   </div>
 </div>
 
@@ -260,7 +285,11 @@
 <div class="ventanaInfo" id="ventanaInfo-preguntados">
   <div class="boton_x2" onclick="cerrarVentanaInfo('ventanaInfo-preguntados')">X</div>
   <h2>Preguntados</h2>
-  <p>Juego estilo preguntados con sistema de puntos. Permite jugar solo o con amigos, respondiendo preguntas de diferentes categorías.</p>
+  <p>Lenguaje: Python/PyGame <br><br>
+Año: 2024 <br><br>
+
+Descripcion: Proyecto realizado para 3er año de Nivel Secundario, en el cual se nos pide utilizar la libreria PyGame para realizar un juego que luego fue expuesto en la ExpoHuergo 2025. <br><br>
+Cosas a destacar: Poder haber empleado un sistema de Backend por primera vez, utilizar PyGame por primera vez, trabajar con el manejo de datos, el trabajo en equipo, entre otras cosas, hicieron que quiera destacar este proyecto (el primero de gran importancia en mi carrera como estudiante y como profesional. <br> </p>
 </div>
 
 <div class="ventanaInfo" id="ventanaInfo-space">
@@ -283,6 +312,7 @@
 
 
 
+
 <div class="barra">
   <label for="toggle" class="boton_windows">
     <img src="https://upload.wikimedia.org/wikipedia/commons/8/87/Windows_logo_-_2021.svg">
@@ -296,7 +326,7 @@
 
 <script src="script.js"></script>
 
-  
+
 
 </body>
 </html>
