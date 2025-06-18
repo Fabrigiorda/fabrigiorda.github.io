@@ -56,7 +56,7 @@ if (pista && flechaIzq && flechaDer) {
 
 
     function actualizarCarrusel() {
-        // Solo aplica la lógica de transform si la pantalla es mayor a 768px
+
         if (window.innerWidth > 768) {
             if (indiceActual > totalCuadrados - cuadradosPorVista) {
                 indiceActual = 0;
@@ -67,7 +67,7 @@ if (pista && flechaIzq && flechaDer) {
             const desplazamiento = -(indiceActual * (anchoCuadrado + gap));
             pista.style.transform = `translateX(${desplazamiento}px)`;
         } else {
-            // En móvil, resetea la transformación para permitir el scroll nativo.
+
             pista.style.transform = 'none';
         }
     }

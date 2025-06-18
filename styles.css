@@ -4,6 +4,23 @@
   --fondo-apps: rgba(255, 255, 255, 0.705);
   --color-letra: rgb(0, 0, 0);
   --fondo-sobremi: linear-gradient(135deg, #ffffff, #ccf9fc);
+  --color-titulo-principal: #0066cc;
+  --color-texto-principal: #333333;
+  --color-highlight: #004d99;
+  --color-fondo-habilidad: rgba(255, 255, 255, 0.95);
+  --color-fondo-habilidad-hover: rgba(255, 255, 255, 1);
+  --color-titulo-habilidad: #333;
+  --color-texto-habilidad: #555;
+  --sombra-habilidad: 0 2px 10px rgba(0, 0, 0, 0.1);
+  --sombra-habilidad-hover: 0 5px 15px rgba(0, 0, 0, 0.15);
+  --filtro-redes: brightness(0);
+  --color-flecha-fondo: #fff;
+  --color-flecha-texto: #00c3ff;
+  --sombra-flecha: 0 4px 16px rgba(0,0,0,0.15);
+  --color-input-fondo: rgba(255, 255, 255, 0.9);
+  --color-input-texto: black;
+  --color-input-borde: #ccc;
+  --sombra-ventana-info: 0 0 30px 0 rgba(0, 0, 0, 0.3);
 }
 
 * {
@@ -18,7 +35,6 @@
   font-weight: 32px;
   font-style: normal;
 }
-
 
 body {
   height: 100vh;
@@ -48,12 +64,7 @@ body {
   border: none;
   cursor: pointer;
   user-select: none;
-  
 }
-
-
-
-
 
 .Titulo {
   font-family: "Josefin Sans";
@@ -85,9 +96,7 @@ body {
     justify-content: center;
     align-items: center;
     padding: 40px;
-    
 }
-
 
 .icono {
     background-color: transparent;
@@ -98,16 +107,10 @@ body {
     cursor: pointer;
 }
 
-
-
-
-
-
 .icono img{
     height: 70px;
     width: 70px;
 }
-
 
 .icono:hover {
     background-color: rgb(206, 206, 206);
@@ -123,10 +126,6 @@ body {
   top: 2px;
 }
 
-
-
-
-
 .button {
   padding: 10px 20px;
   margin-bottom: 20px;
@@ -136,12 +135,10 @@ body {
   user-select: none;
 }
 
-
 #toggle:checked ~ .cuadro_apps {
   transform: translate(-50%, -50%) scale(1);
   opacity: 1;
   pointer-events: auto;
-  
 }
 
 .boton_tema {
@@ -151,7 +148,6 @@ body {
   padding: 170px;
   gap: 5px;
 }
-
 
 .forma {
   height: 40px;
@@ -172,36 +168,10 @@ body {
   transition: transform 0.3s ease;
 }
 
-
 #cambio-tema:checked + label.forma .circulo {
   transform: translateX(60px);
-
 }
 
-body:has(#cambio-tema:checked) {
-  --fondo: url(imagenes/fondo-oscuro.jpg);
-  --color-barra: #0000809c;
-  --fondo-apps: rgba(54, 54, 54, 0.753);
-  --color-letra: rgb(255, 255, 255);
-  --fondo-sobremi: linear-gradient(135deg, #0d0d0d, #1f1f2e);
-}
-
-
-.pagina-sobremi {
-    width: 1100px;
-    height: 780px;
-    background: var(--fondo-sobremi);
-    position: fixed;
-    top: 47%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    border-bottom-left-radius: 15px;
-    border-bottom-right-radius: 15px;
-    border-top-left-radius: 5px;
-    border-top-right-radius: 5px;
-    display: none;
-    z-index: 10;
-}
 
 .barra-arriba {
   width: 100%;
@@ -214,7 +184,6 @@ body:has(#cambio-tema:checked) {
   align-items: center;
   gap: 12px;
   font-family: "Josefin Sans";
-
 }
 
 .boton_x {
@@ -283,7 +252,7 @@ body:has(#cambio-tema:checked) {
 .contenido-sobremi h2 {
   font-size: 2.5rem;
   margin-bottom: 14px;
-  color: #00c3ff;
+  color: var(--color-titulo-principal);
   left: 50%;
 }
 
@@ -294,11 +263,11 @@ body:has(#cambio-tema:checked) {
   max-width: 750px;
   margin: 0 auto;
   line-height: 1.8;
-  color: #d0d0d0;
+  color: var(--color-texto-principal);
 }
 
 .highlight {
-  color: #ffffff;
+  color: var(--color-highlight);
   font-weight: 600;
 }
 
@@ -320,9 +289,8 @@ body:has(#cambio-tema:checked) {
 .redes img {
   width: 42px;
   height: 42px;
-  filter: brightness(0) invert(1);
+  filter: var(--filtro-redes);
 }
-
 
 @keyframes rise {
   from {
@@ -334,7 +302,6 @@ body:has(#cambio-tema:checked) {
     opacity: 1;
   }
 }
-
 
 .circulo-decorativo {
   position: absolute;
@@ -360,23 +327,6 @@ body:has(#cambio-tema:checked) {
   right: -150px;
 }
 
-body:has(#cambio-tema:not(:checked)) .contenido-sobremi h2 {
-  color: #0066cc;
-}
-
-body:has(#cambio-tema:not(:checked)) .contenido-sobremi p {
-  color: #333333;
-}
-
-body:has(#cambio-tema:not(:checked)) .redes img {
-  filter: brightness(0);
-}
-
-body:has(#cambio-tema:not(:checked)) .highlight {
-  color: #004d99;
-}
-
-/* Add these animations before the last closing brace */
 @keyframes ventanaEntrar {
   from {
     transform: translate(-50%, -50%) scale(0.5);
@@ -468,13 +418,13 @@ body:has(#cambio-tema:not(:checked)) .highlight {
 }
 
 .carrusel-ventana {
-  width: 888px; /* 840 + 24*2 (nuevo padding lateral) */
+  width: 888px;
   height: 290px;
   overflow: hidden;
   border-radius: 18px;
   background: rgba(255,255,255,0.07);
   box-shadow: 0 4px 32px rgba(0,0,0,0.10);
-  padding: 25px 24px; /* padding vertical y horizontal */
+  padding: 25px 24px;
   display: flex;
   align-items: center;
   box-sizing: border-box;
@@ -488,7 +438,6 @@ body:has(#cambio-tema:not(:checked)) .highlight {
   will-change: transform;
   height: 240px;
   align-items: center;
-  /* Elimina padding-left para que los cuadrados no se desplacen */
   padding-left: 0;
   width: max-content;
 }
@@ -507,12 +456,10 @@ body:has(#cambio-tema:not(:checked)) .highlight {
   display: flex;
   align-items: center;
   justify-content: center;
-  /* Tamaño fijo para evitar deformaciones */
   min-width: 260px;
   max-width: 260px;
   min-height: 240px;
   max-height: 240px;
-
 }
 
 .botones-repo {
@@ -530,6 +477,8 @@ body:has(#cambio-tema:not(:checked)) .highlight {
   background: transparent;
   border: none;
   cursor: pointer;
+  z-index: 10;
+  opacity: 0%;
 }
 
 .boton-repo.github {
@@ -547,8 +496,8 @@ body:has(#cambio-tema:not(:checked)) .highlight {
 }
 
 .boton-repo img {
-  width: 100%;
-  height: 100%;
+  width: 30px;
+  height: 30px;
   filter: brightness(0) invert(1);
   transition: transform 0.2s ease;
 }
@@ -561,7 +510,11 @@ body:has(#cambio-tema:not(:checked)) .highlight {
   transform: scale(1.06);
   box-shadow: 0 10px 40px rgba(0,0,0,0.22);
   z-index: 2;
-  
+}
+
+.cuadrados:hover .boton-repo {
+  opacity: 100%;
+  transition: all 0.3s ease-in-out;
 }
 
 .cuadrados::after {
@@ -571,7 +524,6 @@ body:has(#cambio-tema:not(:checked)) .highlight {
   border-radius: 18px;
   background: linear-gradient(120deg,rgba(255,255,255,0.08) 40%,rgba(255,255,255,0.18) 100%);
   pointer-events: none;
-  
 }
 
 .contenido-proyectos h2 {
@@ -583,14 +535,14 @@ body:has(#cambio-tema:not(:checked)) .highlight {
 }
 
 .flecha {
-  background: #fff;
+  background: var(--color-flecha-fondo);
   border: none;
   border-radius: 50%;
   width: 50px;
   height: 50px;
   font-size: 1.8rem;
-  color: #00c3ff;
-  box-shadow: 0 4px 16px rgba(0,0,0,0.15);
+  color: var(--color-flecha-texto);
+  box-shadow: var(--sombra-flecha);
   cursor: pointer;
   transition: all 0.3s ease;
   display: flex;
@@ -612,24 +564,10 @@ body:has(#cambio-tema:not(:checked)) .highlight {
   box-shadow: 0 6px 20px rgba(0,195,255,0.3);
 }
 
-/* Ajuste para tema oscuro */
-body:has(#cambio-tema:checked) .flecha {
-  background: #2a2a2a;
-  color: #00c3ff;
-  box-shadow: 0 4px 16px rgba(0,0,0,0.3);
-}
-
-body:has(#cambio-tema:checked) .flecha:hover {
-  background: #00c3ff;
-  color: #fff;
-}
-
-/* Animaciones mejoradas */
 .carrusel-pista.sliding {
   transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
-/* Indicadores de proyecto (opcional) */
 .proyecto-info {
   position: absolute;
   bottom: 20px;
@@ -643,7 +581,6 @@ body:has(#cambio-tema:checked) .flecha:hover {
   font-family: "Josefin Sans";
 }
 
-/* Estilos para contenido dentro de los cuadrados */
 .cuadrados .proyecto-titulo {
   color: white;
   font-size: 1.5rem;
@@ -668,14 +605,6 @@ body:has(#cambio-tema:checked) .flecha:hover {
   z-index: 3;
 }
 
-body:has(#cambio-tema:checked) .cuadrados .proyecto-titulo {
-  text-shadow: 0 2px 4px rgba(0, 195, 255, 0.3);
-}
-
-body:has(#cambio-tema:checked) .cuadrados .proyecto-descripcion {
-  text-shadow: 0 1px 2px rgba(0, 195, 255, 0.3);
-}
-
 .cuadrados .proyecto-imagen {
   position: absolute;
   left: 50%;
@@ -694,7 +623,6 @@ body:has(#cambio-tema:checked) .cuadrados .proyecto-descripcion {
   transition: opacity 0.2s ease-in-out;
 }
 
-
 .cuadrados:hover .proyecto-titulo  {
   transform: translateY(-65px);
   transition: all 0.3s ease-in-out;
@@ -712,11 +640,10 @@ body:has(#cambio-tema:checked) .cuadrados .proyecto-descripcion {
   text-align: center;
 }
 
-
 .contenido-habilidades {
   padding: 20px;
   text-align: center;
-  height: calc(100% - 40px); /* resta la altura de la barra superior */
+  height: calc(100% - 40px);
   overflow-y: auto;
   position: relative;
   z-index: 1;
@@ -724,7 +651,7 @@ body:has(#cambio-tema:checked) .cuadrados .proyecto-descripcion {
 
 .cuadros-habilidades {
   display: grid;
-  grid-template-columns: repeat(4, 1fr); /* fuerza 4 columnas */
+  grid-template-columns: repeat(4, 1fr);
   gap: 20px;
   padding: 15px;
   max-width: 1000px;
@@ -739,7 +666,7 @@ body:has(#cambio-tema:checked) .cuadrados .proyecto-descripcion {
 }
 
 .cuadro-habilidad {
-  background: rgba(32, 32, 32, 0.9);
+  background: var(--color-fondo-habilidad);
   backdrop-filter: blur(10px);
   border-radius: 15px;
   padding: 15px;
@@ -752,31 +679,13 @@ body:has(#cambio-tema:checked) .cuadrados .proyecto-descripcion {
   min-height: 160px;
   width: 100%;
   cursor: default;
+  box-shadow: var(--sombra-habilidad);
 }
 
 .cuadro-habilidad:hover {
   transform: translateY(-5px);
-  background: rgba(54, 54, 54, 0.95);
-  box-shadow: 0 5px 15px rgba(0,0,0,0.3);
-}
-
-body:has(#cambio-tema:not(:checked)) .cuadro-habilidad {
-  background: rgba(255, 255, 255, 0.95);
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-}
-
-body:has(#cambio-tema:not(:checked)) .cuadro-habilidad h3 {
-  color: #333;
-  font-weight: bold;
-}
-
-body:has(#cambio-tema:not(:checked)) .cuadro-habilidad p {
-  color: #555;
-}
-
-body:has(#cambio-tema:not(:checked)) .cuadro-habilidad:hover {
-  background: rgba(255, 255, 255, 1);
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+  background: var(--color-fondo-habilidad-hover);
+  box-shadow: var(--sombra-habilidad-hover);
 }
 
 .cuadro-habilidad img {
@@ -786,37 +695,47 @@ body:has(#cambio-tema:not(:checked)) .cuadro-habilidad:hover {
 }
 
 .cuadro-habilidad h3 {
-  color: white;
+  color: var(--color-titulo-habilidad);
   margin: 10px 0;
+  font-weight: bold;
 }
 
 .cuadro-habilidad p {
-  color: #ccc;
+  color: var(--color-texto-habilidad);
   font-size: 0.9em;
 }
 
-
-.boton-repo {
-  height: 30px;
-  width: 30px;
-  background: transparent;
-  border: none;
-  cursor: pointer;
-  z-index: 10;
-  opacity: 0%;
+.cuadro-habilidad .fa-html5 {
+  color: #e34f26;
 }
 
-.boton-repo img {
-  width: 30px;
-  height: 30px;
-  
+.cuadro-habilidad .fa-css3-alt {
+  color: #264de4;
 }
 
-.cuadrados:hover .boton-repo {
-  opacity: 100%;
-  transition: all 0.3s ease-in-out;
+.cuadro-habilidad .fa-js {
+  color: #f7df1e;
 }
 
+.cuadro-habilidad .fa-python {
+  color: #3776ab;
+}
+
+.cuadro-habilidad .fa-image {
+  color: #31a8ff;
+}
+
+.cuadro-habilidad .fa-video {
+  color: #9999ff;
+}
+
+.cuadro-habilidad .fa-database {
+  color: #00758f;
+}
+
+.cuadro-habilidad .fa-git-alt {
+  color: #f05032;
+}
 
 .ventanaInfo {
   height: 470px;
@@ -835,11 +754,7 @@ body:has(#cambio-tema:not(:checked)) .cuadro-habilidad:hover {
   padding: 20px;
   color: var(--color-letra);
   font-family: "Josefin Sans";
-  box-shadow: 0 0 30px 0 rgba(0, 0, 0, 0.3);
-}
-
-body:has(#cambio-tema:checked) .ventanaInfo {
-  box-shadow: 0 0 30px 0 rgba(0, 195, 255, 0.3);
+  box-shadow: var(--sombra-ventana-info);
 }
 
 .ventanaInfo.abriendo {
@@ -866,7 +781,6 @@ body:has(#cambio-tema:checked) .ventanaInfo {
   font-size: 12;
 }
 
-
 .formulario-contacto {
   display: flex;
   flex-direction: column;
@@ -883,10 +797,11 @@ body:has(#cambio-tema:checked) .ventanaInfo {
   width: 100%;
   padding: 12px 15px;
   border-radius: 8px;
-  border: 1px solid #ccc;
+  border: 1px solid var(--color-input-borde);
   font-size: 16px;
   font-family: "Josefin Sans";
-  background-color: rgba(255, 255, 255, 0.9);
+  background-color: var(--color-input-fondo);
+  color: var(--color-input-texto);
   transition: all 0.3s ease;
 }
 
@@ -937,8 +852,6 @@ body:has(#cambio-tema:checked) .ventanaInfo {
   justify-content: center;
 }
 
-
-
 .formulario-contacto button:hover, .descarga-cv:hover {
   background-color: #00a0d1;
   transform: translateY(-2px);
@@ -949,23 +862,46 @@ body:has(#cambio-tema:checked) .ventanaInfo {
   transform: translateY(0);
 }
 
-/* Estilos para modo oscuro */
-body:has(#cambio-tema:checked) .formulario-contacto input,
-body:has(#cambio-tema:checked) .formulario-contacto textarea {
-  background-color: rgba(30, 30, 30, 0.8);
-  color: white;
-  border: 1px solid #666;
+/* TEMA OSCURO */
+body:has(#cambio-tema:checked) {
+  --fondo: url(imagenes/fondo-oscuro.jpg);
+  --color-barra: #0000809c;
+  --fondo-apps: rgba(54, 54, 54, 0.753);
+  --color-letra: rgb(255, 255, 255);
+  --fondo-sobremi: linear-gradient(135deg, #0d0d0d, #1f1f2e);
+  --color-titulo-principal: #00c3ff;
+  --color-texto-principal: #d0d0d0;
+  --color-highlight: #ffffff;
+  --color-fondo-habilidad: rgba(32, 32, 32, 0.9);
+  --color-fondo-habilidad-hover: rgba(54, 54, 54, 0.95);
+  --color-titulo-habilidad: white;
+  --color-texto-habilidad: #ccc;
+  --sombra-habilidad: 0 2px 10px rgba(0, 0, 0, 0.3);
+  --sombra-habilidad-hover: 0 5px 15px rgba(0,0,0,0.3);
+  --filtro-redes: brightness(0) invert(1);
+  --color-flecha-fondo: #2a2a2a;
+  --color-flecha-texto: #00c3ff;
+  --sombra-flecha: 0 4px 16px rgba(0,0,0,0.3);
+  --color-input-fondo: rgba(30, 30, 30, 0.8);
+  --color-input-texto: white;
+  --color-input-borde: #666;
+  --sombra-ventana-info: 0 0 30px 0 rgba(0, 195, 255, 0.3);
 }
 
-body:has(#cambio-tema:checked) .formulario-contacto input:focus,
-body:has(#cambio-tema:checked) .formulario-contacto textarea:focus {
-  border-color: #00c3ff;
-  box-shadow: 0 0 0 2px rgba(0, 195, 255, 0.2);
+body:has(#cambio-tema:checked) .cuadrados .proyecto-titulo {
+  text-shadow: 0 2px 4px rgba(0, 195, 255, 0.3);
 }
 
-/* --- Responsive Design --- */
+body:has(#cambio-tema:checked) .cuadrados .proyecto-descripcion {
+  text-shadow: 0 1px 2px rgba(0, 195, 255, 0.3);
+}
 
-/* For tablets and smaller desktops */
+body:has(#cambio-tema:checked) .flecha:hover {
+  background: #00c3ff;
+  color: #fff;
+}
+
+
 @media (max-width: 1024px) {
   .ventana {
     width: 90%;
@@ -1001,7 +937,7 @@ body:has(#cambio-tema:checked) .formulario-contacto textarea:focus {
   }
 }
 
-/* For mobile phones */
+
 @media (max-width: 768px) {
   .cuadro_apps {
     width: 90%;
@@ -1016,12 +952,11 @@ body:has(#cambio-tema:checked) .formulario-contacto textarea:focus {
     padding: 20px;
   }
   
-  /* NUEVO: Acomoda el icono y el texto en columna */
   .icono {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 8px; /* Espacio entre imagen y texto */
+    gap: 8px;
   }
 
   .icono img {
@@ -1036,7 +971,7 @@ body:has(#cambio-tema:checked) .formulario-contacto textarea:focus {
   .ventana {
     width: 95%;
     height: 600px;
-    animation: none; /* Disable floating animation on mobile for performance */
+    animation: none;
   }
 
   .contenido-sobremi h2 {
@@ -1059,20 +994,18 @@ body:has(#cambio-tema:checked) .formulario-contacto textarea:focus {
   }
 
   .carrusel {
-    justify-content: flex-start; /* Alinea el carrusel a la izquierda */
+    justify-content: flex-start;
   }
 
-  /* MODIFICADO: Habilita el scroll horizontal */
   .carrusel-ventana {
     width: 100%;
     height: auto;
-    overflow-x: auto; /* Permite el scroll */
+    overflow-x: auto;
     overflow-y: hidden;
   }
 
   .carrusel-pista {
     gap: 15px;
-    /* Evita que JS aplique transformaciones en móvil */
     transform: none !important; 
   }
 
@@ -1089,7 +1022,7 @@ body:has(#cambio-tema:checked) .formulario-contacto textarea:focus {
     transform: translateY(60px);
   }
   
-  /* MODIFICADO: Oculta las flechas en móvil */
+
   .flecha {
     display: none; 
   }
@@ -1120,7 +1053,7 @@ body:has(#cambio-tema:checked) .formulario-contacto textarea:focus {
     left: auto;
     width: 80%;
     max-width: 200px;
-    margin: 40px auto; /* Cambiado de 20px a 40px */
+    margin: 40px auto;
   }
 }
 

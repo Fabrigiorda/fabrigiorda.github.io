@@ -4,74 +4,82 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Portfolio</title>
+  <link rel="icon" type="image/png" href="imagenes/favicon.png">
   <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Titillium+Web:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700&display=swap');
 </style>
 </head>
 <body>
+
+<!-- Checkbox para el boton de windows -->
 <input type="checkbox" id="toggle" hidden>
 
 
+<!-- Este es el recuadro que abre el boton windows y que contiene las apps -->
+<div class="cuadro_apps" >   
 
-<div class="cuadro_apps" >    
     <div class="Titulo">
       <h2>Mi Portfolio</h2>
     </div>
+
     <div class="Apps">  
       <button class="icono">
         <img src="imagenes/sobremi.png" >
         <span>Sobre Mi</span>
       </button>
+
       <button class="icono" >
         <img src="imagenes/proyectos.png" >
         <span>Proyectos</span>
       </button>
+
       <button class="icono" >
         <img src="imagenes/habilidades.png" >
         <span>Habilidades</span>
       </button>
+
       <button class="icono" >
         <img src="imagenes/contacto.png" >
         <span>Contacto</span>
       </button>
+      
     </div>
+
+    <!-- Boton para cambiar el tema -->
     <div class="boton_tema">
       <div class="sol"><img src="imagenes/sol.png"></div>
-
-      
       <input type="checkbox" id="cambio-tema" hidden>
+
       <label for="cambio-tema" class="forma">
         <div class="circulo"></div>
       </label>
-
       <div class="luna"><img src="imagenes/luna.png"></div>
     </div>
 
-    
-  
   </div>
 
 
 
 
 
+<!-- Aca defino las 4 ventanas principales de la pagina -->
 
-
-
-
-
-
-
-
+<!-- Ventana Sobre Mí -->
 <div class="ventana" id="ventana-sobremi">
+  <!-- Barra superior de la ventana con la cruz para cerrarla-->
   <div class="barra-arriba">
     <div class="icono2"><img src="imagenes/sobremi.png"></div>
     <h2 class="texto-sobremi">Sobre Mí</h2>
     <div class="boton_x" onclick="cerrarVentana('ventana-sobremi')">X</div>
   </div>
+
+  <!-- Decoración con circulos de luz -->
   <div class="circulo-decorativo circulo1"></div>
   <div class="circulo-decorativo circulo2"></div>
+
+  <!-- Contenido de la ventana Sobre Mí -->
   <div class="contenido-sobremi">
     <h2>Sobre mí</h2>
     <p>
@@ -84,7 +92,7 @@
     <div class="redes">
       
 
-      <a href="https://github.com/" target="_blank">
+      <a href="https://github.com/Fabrigiorda" target="_blank">
         <img src="https://cdn-icons-png.flaticon.com/512/25/25231.png" alt="GitHub" />
       </a>
 
@@ -105,25 +113,35 @@
 
 
 
-
-
-
-
+<!-- Ventana Proyectos -->
 
 <div class="ventana" id="ventana-proyectos">
+
+  <!-- Barra superior de la ventana con la cruz para cerrarla-->
   <div class="barra-arriba">
     <div class="icono2"><img src="imagenes/proyectos.png"></div>
     <h2 class="texto-proyectos">Proyectos</h2>
     <div class="boton_x" onclick="cerrarVentana('ventana-proyectos')">X</div>
   </div>
+  
+  <!-- Decoración con circulos de luz -->
   <div class="circulo-decorativo circulo1"></div>
   <div class="circulo-decorativo circulo2"></div>
+
+  <!-- Contenido de la ventana Proyectos -->
   <div class="contenido-proyectos">
     <h2>Mis Proyectos</h2>
+
+    <!-- Carrusel que contiente los proyectos proyectos -->
     <div class="carrusel">
+
+      <!-- Flechas para navegar por el carrusel -->
       <button class="flecha flecha-izq" title="Anterior">‹</button>
+
       <div class="carrusel-ventana">
         <div class="carrusel-pista">
+
+          <!-- Cada cuadrado representa un proyecto con su información -->
           <div class="cuadrados">
             <button class="boton-repo info"><img src="imagenes/info.png" alt="info-repo-portfolio" class="info-imagen"></button>
             <a href="https://github.com/Fabrigiorda/fabrigiorda.github.io" target="_blank" class="boton-repo github"><img src="imagenes/github.png" alt="repo-portfolio" class="github-imagen"></a>
@@ -133,6 +151,8 @@
               <div class="proyecto-descripcion">Mi sitio web personal creado con HTML, CSS y JavaScript</div>
             </div>
           </div>
+
+
           <div class="cuadrados">
             <button class="boton-repo info"><img src="imagenes/info.png" alt="info-repo-calculadora" class="info-imagen"></button>
             <a href="https://github.com/Fabrigiorda/Calculadora" target="_blank" class="boton-repo github"><img src="imagenes/github.png" alt="repo-calculadora" class="github-imagen"></a>
@@ -142,6 +162,8 @@
               <div class="proyecto-descripcion">Calculadora funcional con interfaz moderna</div>
             </div>
           </div>
+
+
           <div class="cuadrados">
             <button class="boton-repo info"><img src="imagenes/info.png" alt="info-repo-preguntados" class="info-imagen"></button>
             <a href="https://github.com/Fabrigiorda/Preguntados" target="_blank" class="boton-repo github"><img src="imagenes/github.png" alt="repo-preguntados" class="github-imagen"></a>
@@ -151,6 +173,8 @@
               <div class="proyecto-descripcion">Juego estilo preguntados con sistema de puntos</div>
             </div>
           </div>
+
+
           <div class="cuadrados">
             <button class="boton-repo info"><img src="imagenes/info.png" alt="info-repo-spaceinvaders" class="info-imagen"></button>
             <a href="https://github.com/Fabrigiorda/Space-invaders" target="_blank" class="boton-repo github"><img src="imagenes/github.png" alt="repo-spaceinvaders" class="github-imagen"></a>
@@ -160,6 +184,8 @@
               <div class="proyecto-descripcion">Juego como el space invaders pero version LEGO</div>
             </div>
           </div>
+
+
           <div class="cuadrados">
             <button class="boton-repo info"><img src="imagenes/info.png" alt="info-repo-photoshop" class="info-imagen"></button>
             <a href="https://github.com/Fabrigiorda/Trabajos-Photoshop" target="_blank" class="boton-repo github"><img src="imagenes/github.png" alt="repo-photoshop" class="github-imagen"></a>
@@ -169,6 +195,8 @@
               <div class="proyecto-descripcion">Repositorio con todos mis trabajos de photoshop</div>
             </div>
           </div>
+
+          <!-- Puedes agregar más proyectos aquí siguiendo el mismo formato -->
           <div class="cuadrados">
             <div>
               <div class="proyecto-titulo"></div>
@@ -184,66 +212,91 @@
 </div>
 
 
+
+<!-- Ventana Habilidades -->
+
 <div class="ventana" id="ventana-habilidades">
+
+  <!-- Barra superior de la ventana con la cruz para cerrarla-->
   <div class="barra-arriba">
     <div class="icono2"><img src="imagenes/habilidades.png"></div>
     <h2 class="texto-habilidades">Habilidades</h2>
     <div class="boton_x" onclick="cerrarVentana('ventana-habilidades')">X</div>
   </div>
   
+  <!-- Decoración con circulos de luz -->
   <div class="circulo-decorativo circulo1"></div>
   <div class="circulo-decorativo circulo2"></div>
 
+  <!-- Contenido de la ventana Habilidades -->
   <div class="contenido-habilidades">
     <h2>Mis Habilidades</h2>
     <div class="cuadros-habilidades">
+
+      <!-- Cada cuadro representa una habilidad con su icono y descripción -->
       <div class="cuadro-habilidad">
-        <img src="imagenes/html.png" alt="HTML">
+        <i class="fab fa-html5 fa-3x"></i>
         <h3>HTML</h3>
         <p>Conocimiento básico de HTML5</p>
       </div>
+
+
       <div class="cuadro-habilidad">
-        <img src="imagenes/css.png" alt="CSS">
+        <i class="fab fa-css3-alt fa-3x"></i>
         <h3>CSS</h3>
         <p>Conocimiento básico de CSS3</p>
       </div>
+
+
       <div class="cuadro-habilidad">
-        <img src="imagenes/javascript.png" alt="JavaScript">
+        <i class="fab fa-js fa-3x"></i>
         <h3>JavaScript</h3>
         <p>Conocimiento básico de JavaScript</p>
       </div>
+
+
       <div class="cuadro-habilidad">
-        <img src="imagenes/python.png" alt="Python">
+        <i class="fab fa-python fa-3x"></i>
         <h3>Python</h3>
         <p>Conocimiento básico de Python</p>
       </div>
+
+
       <div class="cuadro-habilidad">
-        <img src="imagenes/photoshop.png" alt="Photoshop">
+        <i class="fa-solid fa-image fa-3x"></i>
         <h3>Photoshop</h3>
         <p>Edición de imágenes</p>
       </div>
+
+
       <div class="cuadro-habilidad">
-        <img src="imagenes/edicion.png" alt="Video">
+        <i class="fa-solid fa-video fa-3x"></i>
         <h3>Edición de Video</h3>
         <p>Edición y montaje de videos</p>
       </div>
+
+
       <div class="cuadro-habilidad">
-        <img src="imagenes/mysql.png" alt="MySQL">
+        <i class="fa-solid fa-database fa-3x"></i>
         <h3>MySQL</h3>
         <p>Gestión de bases de datos</p>
       </div>
+
+
       <div class="cuadro-habilidad">
-        <img src="imagenes/git.png" alt="Git">
+        <i class="fab fa-git-alt fa-3x"></i>
         <h3>Git</h3>
         <p>Control de versiones y colaboración</p>
       </div>
+
+
     </div>
   </div>
 </div>
 
 
 
-
+<!-- Ventana Contacto -->
 <div class="ventana" id="ventana-contacto">
   <div class="barra-arriba">
     <div class="icono2"><img src="imagenes/contacto.png"></div>
@@ -267,6 +320,12 @@
     </form>
   </div>
 </div>
+
+
+
+
+
+<!-- Ventanas de información para cada proyecto -->
 
 
 <div class="ventanaInfo" id="ventanaInfo-portfolio">
@@ -312,7 +371,7 @@ Cosas a destacar: Poder haber empleado un sistema de Backend por primera vez, ut
 
 
 
-
+<!-- Barra de tareas con el boton windows-->
 <div class="barra">
   <label for="toggle" class="boton_windows">
     <img src="https://upload.wikimedia.org/wikipedia/commons/8/87/Windows_logo_-_2021.svg">
