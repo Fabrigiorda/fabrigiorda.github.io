@@ -37,7 +37,7 @@
 }
 
 body {
-  height: 100vh;
+  height: 100vh; 
   background-image: var(--fondo);
   background-size: cover;
   background-position: center;
@@ -250,7 +250,7 @@ body {
 }
 
 .contenido-sobremi h2 {
-  font-size: 2.5rem;
+  font-size: 40px;
   margin-bottom: 14px;
   color: var(--color-titulo-principal);
   left: 50%;
@@ -259,10 +259,10 @@ body {
 .contenido-sobremi p {
   position: relative;
   top: 40px;
-  font-size: 1.2rem;
+  font-size: 19px; 
   max-width: 750px;
   margin: 0 auto;
-  line-height: 1.8;
+  line-height: 1.8; 
   color: var(--color-texto-principal);
 }
 
@@ -528,7 +528,7 @@ body {
 
 .contenido-proyectos h2 {
   margin-top: 20px;
-  font-size: 2.5rem;
+  font-size: 40px; 
   margin-bottom: 20px;
   color: #00c3ff;
   text-align: center;
@@ -540,7 +540,7 @@ body {
   border-radius: 50%;
   width: 50px;
   height: 50px;
-  font-size: 1.8rem;
+  font-size: 29px;
   color: var(--color-flecha-texto);
   box-shadow: var(--sombra-flecha);
   cursor: pointer;
@@ -577,13 +577,13 @@ body {
   color: white;
   padding: 8px 16px;
   border-radius: 20px;
-  font-size: 0.9rem;
+  font-size: 14px;
   font-family: "Josefin Sans";
 }
 
 .cuadrados .proyecto-titulo {
   color: white;
-  font-size: 1.5rem;
+  font-size: 24px;
   font-weight: bold;
   text-align: center;
   font-family: "Josefin Sans";
@@ -595,7 +595,7 @@ body {
 
 .cuadrados .proyecto-descripcion {
   color: rgba(255,255,255,0.9);
-  font-size: 0.9rem;
+  font-size: 14px; 
   text-align: center;
   margin-top: 10px;
   font-family: "Josefin Sans";
@@ -634,7 +634,7 @@ body {
 }
 
 .contenido-habilidades h2 {
-  font-size: 2.5rem;
+  font-size: 40px; 
   margin-bottom: 20px;
   color: #00c3ff;
   text-align: center;
@@ -702,7 +702,7 @@ body {
 
 .cuadro-habilidad p {
   color: var(--color-texto-habilidad);
-  font-size: 0.9em;
+  font-size: 14px; 
 }
 
 .cuadro-habilidad .fa-html5 {
@@ -918,7 +918,7 @@ body:has(#cambio-tema:checked) .flecha:hover {
 
   .contenido-sobremi p {
     top: 40px;
-    font-size: 1.1rem;
+    font-size: 18px; 
     max-width: 90%;
   }
 
@@ -975,13 +975,13 @@ body:has(#cambio-tema:checked) .flecha:hover {
   }
 
   .contenido-sobremi h2 {
-    font-size: 2rem;
+    font-size: 32px; 
   }
 
   .contenido-sobremi p {
     top: 20px;
-    font-size: 1rem;
-    line-height: 1.6;
+    font-size: 16px;
+    line-height: 1.6; 
   }
 
   .redes {
@@ -1006,7 +1006,7 @@ body:has(#cambio-tema:checked) .flecha:hover {
 
   .carrusel-pista {
     gap: 15px;
-    transform: none !important; 
+    transform: none; 
   }
 
   .cuadrados {
@@ -1028,7 +1028,7 @@ body:has(#cambio-tema:checked) .flecha:hover {
   }
 
   .contenido-habilidades h2 {
-    font-size: 2rem;
+    font-size: 32px; 
   }
 
   .cuadros-habilidades {
@@ -1063,7 +1063,7 @@ body:has(#cambio-tema:checked) .flecha:hover {
   }
   
   .contenido-sobremi p {
-      font-size: 0.9rem;
+      font-size: 14px; 
   }
 
   .cuadrados {
