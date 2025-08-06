@@ -3,7 +3,7 @@ const infosAbiertas = {};
 
 document.querySelectorAll('.icono').forEach((btn, index) => {
   btn.addEventListener('click', () => {
-    const idVentana = ['ventana-sobremi', 'ventana-proyectos', 'ventana-habilidades', 'ventana-contacto'][index];
+    const idVentana = ['ventana-sobremi', 'ventana-proyectos', 'ventana-habilidades', 'ventana-contacto', 'ventana-blog'][index];
     if (!ventanasAbiertas[idVentana]) {
       const ventana = document.getElementById(idVentana);
       ventana.style.display = 'flex';

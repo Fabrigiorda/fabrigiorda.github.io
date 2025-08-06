@@ -78,7 +78,7 @@ body {
 
 .cuadro_apps {
     width: 500px;
-    height: 500px;
+    height: 470px;
     background: var(--fondo-apps);
     position: fixed;
     top: 45%;
@@ -90,12 +90,19 @@ body {
     opacity: 0;
 }
 
-.Apps {
+.Apps, .Apps2 {
     display: flex;
     gap: 45px;
     justify-content: center;
     align-items: center;
+}
+
+.Apps {
     padding: 40px;
+}
+
+.Apps2 {
+    padding: 0 40px 40px 40px;
 }
 
 .icono {
@@ -105,6 +112,10 @@ body {
     font-family: "Josefin Sans";
     color: var(--color-letra);   
     cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
 }
 
 .icono img{
@@ -145,7 +156,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 170px;
+  padding: 30px;
   gap: 5px;
 }
 
